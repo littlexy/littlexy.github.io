@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Cello</title>
   
-  <subtitle>胡说八道</subtitle>
+  <subtitle>谈天论地</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://littlexy.git.io/"/>
