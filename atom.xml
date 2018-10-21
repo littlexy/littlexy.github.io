@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://littlexy.git.io/"/>
-  <updated>2018-10-21T08:55:12.028Z</updated>
+  <updated>2018-10-21T10:01:38.448Z</updated>
   <id>https://littlexy.git.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>榴花</title>
+    <link href="https://littlexy.git.io/2018/10/21/%E6%A6%B4%E8%8A%B1/"/>
+    <id>https://littlexy.git.io/2018/10/21/榴花/</id>
+    <published>2018-10-21T09:56:32.000Z</published>
+    <updated>2018-10-21T10:01:38.448Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2018/10/21/榴花/liuhua.jpg" alt="榴花"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;/2018/10/21/榴花/liuhua.jpg&quot; alt=&quot;榴花&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>PointNet代码分析</title>
