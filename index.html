@@ -264,6 +264,141 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlexy.git.io/2018/10/29/HDFS基本概念/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cello">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cello">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/29/HDFS基本概念/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-29T10:50:08+08:00">
+                2018-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="大数据学习笔记"><a href="#大数据学习笔记" class="headerlink" title="大数据学习笔记"></a>大数据学习笔记</h1><h2 id="HDFS基本概念"><a href="#HDFS基本概念" class="headerlink" title="HDFS基本概念"></a>HDFS基本概念</h2><p>2018/10/28 21:11:48<br><br>HDFS体系结构</p>
+<p><img src="https://i.imgur.com/qIQuNat.png" alt=""><br>基本知识点：</p>
+<ul>
+<li>HDFS是以块为基本的存储单位，块的大小为64MB，块是整个文件存储处理的逻辑单位</li>
+<li>每个数据块都有三份，两个放在机架1，第三个放在机架二，防止硬件设备的故障导致数据块的损失</li>
+<li>HDFS包含两类节点，分别为NameNode和DataNode</li>
+<li>NameNode是管理节点，存放元数据，元数据包含两个部分，分别是文件与数据块的映射表（可通过映射表找到具体的数据块）</li>
+<li>DataNode是数据节点，存放数据块</li>
+<li>Secondary NameNode是备份管理节点，当NameNode出现问题后，备份管理节点将会代替原先NameNode的位置工作</li>
+</ul>
+<p>工作流程：<br></p>
+<p>查询流程:<br><br>客户端通过命令行或者程序输入查询语句，访问到管理节点，管理节点返回元数据给客户端，客户端再通过其中的映射表读取到数据块</p>
+<p>插入流程：<br><br>客户端发出插入请求，NameNode找到空的可用的数据块将数据插入，然后数据块以流水线的形式将其复制两份放入指定的的位置</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	<div>
+		
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://littlexy.git.io/2018/10/21/榴花/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -887,7 +1022,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

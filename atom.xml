@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://littlexy.git.io/"/>
-  <updated>2018-10-21T10:14:58.624Z</updated>
+  <updated>2018-10-29T02:46:04.821Z</updated>
   <id>https://littlexy.git.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://littlexy.git.io/2018/10/29/HDFS%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>https://littlexy.git.io/2018/10/29/HDFS基本概念/</id>
+    <published>2018-10-29T02:50:08.865Z</published>
+    <updated>2018-10-29T02:46:04.821Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="大数据学习笔记"><a href="#大数据学习笔记" class="headerlink" title="大数据学习笔记"></a>大数据学习笔记</h1><h2 id="HDFS基本概念"><a href="#HDFS基本概念" class="headerlink" title="HDFS基本概念"></a>HDFS基本概念</h2><p>2018/10/28 21:11:48<br><br>HDFS体系结构</p><p><img src="https://i.imgur.com/qIQuNat.png" alt=""><br>基本知识点：</p><ul><li>HDFS是以块为基本的存储单位，块的大小为64MB，块是整个文件存储处理的逻辑单位</li><li>每个数据块都有三份，两个放在机架1，第三个放在机架二，防止硬件设备的故障导致数据块的损失</li><li>HDFS包含两类节点，分别为NameNode和DataNode</li><li>NameNode是管理节点，存放元数据，元数据包含两个部分，分别是文件与数据块的映射表（可通过映射表找到具体的数据块）</li><li>DataNode是数据节点，存放数据块</li><li>Secondary NameNode是备份管理节点，当NameNode出现问题后，备份管理节点将会代替原先NameNode的位置工作</li></ul><p>工作流程：<br></p><p>查询流程:<br><br>客户端通过命令行或者程序输入查询语句，访问到管理节点，管理节点返回元数据给客户端，客户端再通过其中的映射表读取到数据块</p><p>插入流程：<br><br>客户端发出插入请求，NameNode找到空的可用的数据块将数据插入，然后数据块以流水线的形式将其复制两份放入指定的的位置</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;大数据学习笔记&quot;&gt;&lt;a href=&quot;#大数据学习笔记&quot; class=&quot;headerlink&quot; title=&quot;大数据学习笔记&quot;&gt;&lt;/a&gt;大数据学习笔记&lt;/h1&gt;&lt;h2 id=&quot;HDFS基本概念&quot;&gt;&lt;a href=&quot;#HDFS基本概念&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>榴花</title>
