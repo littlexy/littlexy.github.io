@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://littlexy.git.io/"/>
-  <updated>2018-10-29T02:54:58.686Z</updated>
+  <updated>2018-10-31T10:32:47.345Z</updated>
   <id>https://littlexy.git.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MapReduce基本概念和工作流程</title>
+    <link href="https://littlexy.git.io/2018/10/31/MapReduce%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E5%92%8C%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
+    <id>https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/</id>
+    <published>2018-10-31T09:55:37.000Z</published>
+    <updated>2018-10-31T10:32:47.345Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MapReduce基本概念"><a href="#MapReduce基本概念" class="headerlink" title="MapReduce基本概念"></a>MapReduce基本概念</h2><p>MapReduce其实是一个并行的计算框架，怎么理解呢？就是他会将一个任务分解成很多个任务给各个单位执行，然后将各个小任务的处理结果合并。这里的分配任务就是Map，合并结果就是Reduce，下面是基本原理图</p><p><img src="https://i.imgur.com/eJ23izH.png" alt=""></p><p>Input split是将数据分片，然后提交到各个map tasks处理，处理的结果经过交换到对应的reduce tasks，在这里各个任务的结果将被统计处理，最后筛选出最终结果。</p><h2 id="MapReduce运行流程"><a href="#MapReduce运行流程" class="headerlink" title="MapReduce运行流程"></a>MapReduce运行流程</h2><p><img src="https://i.imgur.com/9lV3wvb.png" alt=""></p><p>这里面的JobTracker和TaskTracker可以理解为两类不同的节点，其中JobTracker是管理节点，负责将分配Map任务和Reduce任务，Map端和Reduce端分别包含了很多个TaskTracker用于处理小任务，最终的输出结果输出到HDFS中存储</p><h2 id="MapReduce容错机制"><a href="#MapReduce容错机制" class="headerlink" title="MapReduce容错机制"></a>MapReduce容错机制</h2><p>MapReduce提供了可靠的容错机制，防止出现一些故障，主要有以下两点：</p><ol><li>重复执行：当任务出错后，首先重复执行，一般会重复四次，四次后仍出错放弃。</li><li>推测执行：当JobTracker检测到某个TasksTracker相比于其他TaskTracker计算慢很多以后，会找一个另外的TaskTracker来计算，谁先计算完就采用谁的结果，慢的就会被终止。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;MapReduce基本概念&quot;&gt;&lt;a href=&quot;#MapReduce基本概念&quot; class=&quot;headerlink&quot; title=&quot;MapReduce基本概念&quot;&gt;&lt;/a&gt;MapReduce基本概念&lt;/h2&gt;&lt;p&gt;MapReduce其实是一个并行的计算框架，怎么理解
+      
+    
+    </summary>
+    
+    
+      <category term="大数据学习笔记" scheme="https://littlexy.git.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>HDFS基本概念</title>

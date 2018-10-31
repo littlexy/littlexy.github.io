@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="美食,">
+  <meta name="keywords" content="大数据学习笔记,">
 
 
 
@@ -81,20 +81,21 @@
 
 
 
-<meta name="description" content="图片来自：http://garywu.lofter.com/ 偶然在Lofter上一个美食博客上看见了这张图，第一眼就喜欢上了，淡粉色的色调让人觉得很舒服">
-<meta name="keywords" content="美食">
+<meta name="description" content="MapReduce基本概念MapReduce其实是一个并行的计算框架，怎么理解呢？就是他会将一个任务分解成很多个任务给各个单位执行，然后将各个小任务的处理结果合并。这里的分配任务就是Map，合并结果就是Reduce，下面是基本原理图  Input split是将数据分片，然后提交到各个map tasks处理，处理的结果经过交换到对应的reduce tasks，在这里各个任务的结果将被统计处理，最后">
+<meta name="keywords" content="大数据学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="榴花">
-<meta property="og:url" content="https://littlexy.git.io/2018/10/21/榴花/index.html">
+<meta property="og:title" content="MapReduce基本概念和工作流程">
+<meta property="og:url" content="https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/index.html">
 <meta property="og:site_name" content="Cello">
-<meta property="og:description" content="图片来自：http://garywu.lofter.com/ 偶然在Lofter上一个美食博客上看见了这张图，第一眼就喜欢上了，淡粉色的色调让人觉得很舒服">
+<meta property="og:description" content="MapReduce基本概念MapReduce其实是一个并行的计算框架，怎么理解呢？就是他会将一个任务分解成很多个任务给各个单位执行，然后将各个小任务的处理结果合并。这里的分配任务就是Map，合并结果就是Reduce，下面是基本原理图  Input split是将数据分片，然后提交到各个map tasks处理，处理的结果经过交换到对应的reduce tasks，在这里各个任务的结果将被统计处理，最后">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://littlexy.git.io/2018/10/21/榴花/liuhua.jpg">
-<meta property="og:updated_time" content="2018-10-21T10:14:58.624Z">
+<meta property="og:image" content="https://i.imgur.com/eJ23izH.png">
+<meta property="og:image" content="https://i.imgur.com/9lV3wvb.png">
+<meta property="og:updated_time" content="2018-10-31T10:32:47.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="榴花">
-<meta name="twitter:description" content="图片来自：http://garywu.lofter.com/ 偶然在Lofter上一个美食博客上看见了这张图，第一眼就喜欢上了，淡粉色的色调让人觉得很舒服">
-<meta name="twitter:image" content="https://littlexy.git.io/2018/10/21/榴花/liuhua.jpg">
+<meta name="twitter:title" content="MapReduce基本概念和工作流程">
+<meta name="twitter:description" content="MapReduce基本概念MapReduce其实是一个并行的计算框架，怎么理解呢？就是他会将一个任务分解成很多个任务给各个单位执行，然后将各个小任务的处理结果合并。这里的分配任务就是Map，合并结果就是Reduce，下面是基本原理图  Input split是将数据分片，然后提交到各个map tasks处理，处理的结果经过交换到对应的reduce tasks，在这里各个任务的结果将被统计处理，最后">
+<meta name="twitter:image" content="https://i.imgur.com/eJ23izH.png">
 
 
 
@@ -124,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://littlexy.git.io/2018/10/21/榴花/">
+  <link rel="canonical" href="https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/">
 
 
 
 
 
-  <title>榴花 | Cello</title>
+  <title>MapReduce基本概念和工作流程 | Cello</title>
   
 
 
@@ -267,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://littlexy.git.io/2018/10/21/榴花/">
+    <link itemprop="mainEntityOfPage" href="https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cello">
@@ -284,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">榴花</h1>
+          <h1 class="post-title" itemprop="name headline">MapReduce基本概念和工作流程</h1>
         
 
         <div class="post-meta">
@@ -296,8 +297,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-21T17:56:32+08:00">
-                2018-10-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-31T17:55:37+08:00">
+                2018-10-31
               </time>
             
 
@@ -339,8 +340,16 @@
       
 
       
-        <p><img src="/2018/10/21/榴花/liuhua.jpg" alt="榴花"><br>图片来自：<a href="http://garywu.lofter.com/" target="_blank" rel="noopener">http://garywu.lofter.com/</a></p>
-<p>偶然在Lofter上一个美食博客上看见了这张图，第一眼就喜欢上了，淡粉色的色调让人觉得很舒服</p>
+        <h2 id="MapReduce基本概念"><a href="#MapReduce基本概念" class="headerlink" title="MapReduce基本概念"></a>MapReduce基本概念</h2><p>MapReduce其实是一个并行的计算框架，怎么理解呢？就是他会将一个任务分解成很多个任务给各个单位执行，然后将各个小任务的处理结果合并。这里的分配任务就是Map，合并结果就是Reduce，下面是基本原理图</p>
+<p><img src="https://i.imgur.com/eJ23izH.png" alt=""></p>
+<p>Input split是将数据分片，然后提交到各个map tasks处理，处理的结果经过交换到对应的reduce tasks，在这里各个任务的结果将被统计处理，最后筛选出最终结果。</p>
+<h2 id="MapReduce运行流程"><a href="#MapReduce运行流程" class="headerlink" title="MapReduce运行流程"></a>MapReduce运行流程</h2><p><img src="https://i.imgur.com/9lV3wvb.png" alt=""></p>
+<p>这里面的JobTracker和TaskTracker可以理解为两类不同的节点，其中JobTracker是管理节点，负责将分配Map任务和Reduce任务，Map端和Reduce端分别包含了很多个TaskTracker用于处理小任务，最终的输出结果输出到HDFS中存储</p>
+<h2 id="MapReduce容错机制"><a href="#MapReduce容错机制" class="headerlink" title="MapReduce容错机制"></a>MapReduce容错机制</h2><p>MapReduce提供了可靠的容错机制，防止出现一些故障，主要有以下两点：</p>
+<ol>
+<li>重复执行：当任务出错后，首先重复执行，一般会重复四次，四次后仍出错放弃。</li>
+<li>推测执行：当JobTracker检测到某个TasksTracker相比于其他TaskTracker计算慢很多以后，会找一个另外的TaskTracker来计算，谁先计算完就采用谁的结果，慢的就会被终止。</li>
+</ol>
 
       
     </div>
@@ -357,12 +366,12 @@
 	<!-- JS库 sweetalert 可修改路径 --> 
 	<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script> 
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
-	<p><span>本文标题:</span><a href="/2018/10/21/榴花/">榴花</a></p> 
+	<p><span>本文标题:</span><a href="/2018/10/31/MapReduce基本概念和工作流程/">MapReduce基本概念和工作流程</a></p> 
 	<p><span>文章作者:</span><a href="/" title="访问 Cello 的个人博客">Cello</a></p> 
-	<p><span>发布时间:</span>2018年10月21日 - 17:10</p> 
-	<p><span>最后更新:</span>2018年10月21日 - 18:10</p> 
-	<p><span>原始链接:</span><a href="/2018/10/21/榴花/" title="榴花">https://littlexy.git.io/2018/10/21/榴花/</a> 
-		<span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://littlexy.git.io/2018/10/21/榴花/" aria-label="复制成功！"></i></span> 
+	<p><span>发布时间:</span>2018年10月31日 - 17:10</p> 
+	<p><span>最后更新:</span>2018年10月31日 - 18:10</p> 
+	<p><span>原始链接:</span><a href="/2018/10/31/MapReduce基本概念和工作流程/" title="MapReduce基本概念和工作流程">https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/</a> 
+		<span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/" aria-label="复制成功！"></i></span> 
 		</p> 
 	<p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p> 
 </div> 
@@ -422,7 +431,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/美食/" rel="tag"># 美食</a>
+            <a href="/tags/大数据学习笔记/" rel="tag"># 大数据学习笔记</a>
           
         </div>
       
@@ -435,8 +444,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/21/PointNet代码分析/" rel="next" title="PointNet代码分析">
-                <i class="fa fa-chevron-left"></i> PointNet代码分析
+              <a href="/2018/10/29/HDFS基本概念/" rel="next" title="HDFS基本概念">
+                <i class="fa fa-chevron-left"></i> HDFS基本概念
               </a>
             
           </div>
@@ -444,10 +453,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/29/HDFS基本概念/" rel="prev" title="HDFS基本概念">
-                HDFS基本概念 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -505,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -586,6 +600,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce基本概念"><span class="nav-number">1.</span> <span class="nav-text">MapReduce基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce运行流程"><span class="nav-number">2.</span> <span class="nav-text">MapReduce运行流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce容错机制"><span class="nav-number">3.</span> <span class="nav-text">MapReduce容错机制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

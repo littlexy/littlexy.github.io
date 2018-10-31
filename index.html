@@ -264,6 +264,138 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://littlexy.git.io/2018/10/31/MapReduce基本概念和工作流程/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cello">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cello">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/31/MapReduce基本概念和工作流程/" itemprop="url">MapReduce基本概念和工作流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-31T17:55:37+08:00">
+                2018-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MapReduce基本概念"><a href="#MapReduce基本概念" class="headerlink" title="MapReduce基本概念"></a>MapReduce基本概念</h2><p>MapReduce其实是一个并行的计算框架，怎么理解呢？就是他会将一个任务分解成很多个任务给各个单位执行，然后将各个小任务的处理结果合并。这里的分配任务就是Map，合并结果就是Reduce，下面是基本原理图</p>
+<p><img src="https://i.imgur.com/eJ23izH.png" alt=""></p>
+<p>Input split是将数据分片，然后提交到各个map tasks处理，处理的结果经过交换到对应的reduce tasks，在这里各个任务的结果将被统计处理，最后筛选出最终结果。</p>
+<h2 id="MapReduce运行流程"><a href="#MapReduce运行流程" class="headerlink" title="MapReduce运行流程"></a>MapReduce运行流程</h2><p><img src="https://i.imgur.com/9lV3wvb.png" alt=""></p>
+<p>这里面的JobTracker和TaskTracker可以理解为两类不同的节点，其中JobTracker是管理节点，负责将分配Map任务和Reduce任务，Map端和Reduce端分别包含了很多个TaskTracker用于处理小任务，最终的输出结果输出到HDFS中存储</p>
+<h2 id="MapReduce容错机制"><a href="#MapReduce容错机制" class="headerlink" title="MapReduce容错机制"></a>MapReduce容错机制</h2><p>MapReduce提供了可靠的容错机制，防止出现一些故障，主要有以下两点：</p>
+<ol>
+<li>重复执行：当任务出错后，首先重复执行，一般会重复四次，四次后仍出错放弃。</li>
+<li>推测执行：当JobTracker检测到某个TasksTracker相比于其他TaskTracker计算慢很多以后，会找一个另外的TaskTracker来计算，谁先计算完就采用谁的结果，慢的就会被终止。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+	<div>
+		
+	</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://littlexy.git.io/2018/10/29/HDFS基本概念/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1022,7 +1154,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
